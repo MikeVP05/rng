@@ -12,6 +12,14 @@
     font-size: 1.7em;
 }
 
+.navbar-hrefs {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    flex: 1;
+    padding-right:50px;
+}
+
 .navbar-hrefs a:after {
     content: "";
     background: #e44c4c;
