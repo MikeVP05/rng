@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    padding-left: 50px;
+}
+
+.navbar a {
+    color: black;
+    position: relative;
+    text-decoration: none !important;
+    font-size: 1.7em;
+}
+
+.navbar-hrefs a:after {
+    content: "";
+    background: #e44c4c;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 7.5%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar-hrefs a:hover:after {
+    transform: scaleX(1);
+}
