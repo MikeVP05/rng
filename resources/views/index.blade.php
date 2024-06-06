@@ -9,17 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}" >
     </head>
     <body>
-        <div class="navbar">
-            <div class="navbar-brand">
-                <a href="/">
-                    <img src="{{ asset('media/RNG_lion.png') }}">
-                </a>
-            </div>
-            <div class="navbar-hrefs">
-                <a class="navbar-href" href="/login">Inloggen</a>
-                <a class="navbar-black" href="/register">Aanmelden</a>
-            </div>
-        </div>
+        @include('templates.navbar')
 
         <div class="banner">
             <h3>RNG</h3>
