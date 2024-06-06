@@ -1,8 +1,10 @@
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    padding: 25px;
-    padding-left: 50px;
+    margin: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar a {
@@ -12,21 +14,31 @@
     font-size: 1.7em;
 }
 
+.navbar-brand {
+    font-weight: bold;
+    border-bottom: 5px solid #e44c4c;
+}
+
+.navbar-brand img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
 .navbar-hrefs {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: end;
     flex: 1;
-    padding-right:50px;
 }
 
-.navbar-hrefs a:after {
+.navbar-hrefs .navbar-href:after {
     content: "";
     background: #e44c4c;
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -10%;
     height: 7.5%;
     width: 100%;
     transform: scaleX(0);
@@ -34,6 +46,58 @@
     transition: transform 0.3s ease;
 }
 
-.navbar-hrefs a:hover:after {
+.navbar-hrefs .navbar-href:hover:after {
     transform: scaleX(1);
+}
+
+.navbar-black {
+    font-size: 1.2em !important;
+    color: white !important;
+    padding: 10px;
+    background: black;
+    border: 5px solid white;
+    letter-spacing: 5px;
+    transition: border 0.3s ease, outline 0.3s ease, background 0.3s ease, color 0.3s ease;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.navbar-black:hover {
+    background: white;
+    color: black !important;
+    border: 5px solid black;
+}
+
+.navbar-href {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 534px) {
+    .navbar-hrefs {
+        justify-content: center;
+    }
+
+    .navbar-hrefs {
+        margin-top: 10px;
+        flex-basis: 100%;
+    }
+
+    .navbar-href {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navbar-hrefs {
+        flex-wrap: wrap;
+    }
+
+    .navbar-href {
+        margin-right: 0;
+    }
+
+    .navbar-hrefs .navbar-black {
+        margin-top: 25px;
+    }
 }
