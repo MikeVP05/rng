@@ -41,18 +41,6 @@
     height: auto;
 }
 
-.footer {
-    margin-top: auto;
-    min-height: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-height: 10px;
-    align-items: center;
-    background: #e44c4c;
-    color: white;
-}
-
 @media screen and (max-width: 950px) {
     .card {
         flex-basis: 100%;

@@ -1,0 +1,35 @@
+.form {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:auto;
+    text-align: center;
+    background: #e44c4c;
+    padding: 25px;
+    border-radius: 10px;
+    color:white;
+}
+
+.form input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form div {
+    display:flex;
+}
+
+.form button[type="submit"] {
+    background:white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top:10px;
+}
+
+.form button:hover {
+    background: #dad9d9;
+}

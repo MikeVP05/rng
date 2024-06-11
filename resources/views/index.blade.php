@@ -6,6 +6,7 @@
         <title>Laravel</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}" >
     </head>
     <body>
@@ -31,6 +32,6 @@
             </div>
         </div>
 
-        <div class="footer"> <h4>RNG 2024</h4> </div>
+        @include('templates.footer')
     </body>
 </html>

@@ -20,7 +20,8 @@ class AuthController extends Controller
 
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|max:255',
+            'firstname' => 'required|max:255|string',
+            'lastname' => 'required|max:255|string',
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
@@ -32,9 +33,10 @@ class AuthController extends Controller
         $validated = $validator->validated();
 
         $user = new User();
+        $user->firstname = $validated['firstname'];
+        $user->lastname = $validated['lastname'];
         $user->password = Hash::make($validated['password']);
         $user->email = $validated['email'];
-        $user->name = $validated['username'];
         $user->save();
  
         return redirect('/login')->with('success', 'Registration successful');
@@ -44,8 +46,8 @@ class AuthController extends Controller
         if (Auth::attempt($request->except(['_token']))) {
             return redirect('/');
         }else{
-            return back()->with('error', 'Invalid login credentials');
-        }
+            return back()->withErrors('error', 'Invalid login credentials');
+        }  
     }
 
     public function logout() {

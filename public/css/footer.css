@@ -1,0 +1,11 @@
+.footer {
+    margin-top: auto;
+    min-height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 10px;
+    align-items: center;
+    background: #e44c4c;
+    color: white;
+}

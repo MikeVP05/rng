@@ -7,20 +7,19 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}" >
-    <title>Document</title>
+
+    <title>Profiel</title>
 </head>
 <body>
     @include('templates.navbar')
-
-        <form class="form" method="POST">
-            @csrf
-            <h1>Inloggen</h1>
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit">Inloggen</button>
-        </form>
-
+    @if(Auth::check())
+        <h1>Welkom {{ Auth::user()->name }}</h1>
+        <p>Email: {{ Auth::user()->email }}</p>
+        <p>Balans: {{ Auth::user()->balance }}</p>
+    @else
+        <h1>U bent niet ingelogd</h1>
+    @endif
     @include('templates.footer')
+
 </body>
 </html>
